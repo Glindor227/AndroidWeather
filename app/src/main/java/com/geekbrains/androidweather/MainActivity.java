@@ -5,13 +5,24 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
-    private static final String TAG = "GlindorLog";
-    TextView counterTextView;
+import com.geekbrains.common.ViewParamsToSecondActivity;
 
+public class MainActivity extends AppCompatActivity {
+    public static final String TAG = "GlindorLog";
+
+    private EditText viewCityName;
+    private CheckBox viewCityTemp;
+    private CheckBox viewCityHum;
+    private CheckBox viewCityOvercast;
+    private CheckBox viewCityWind;
+    private CheckBox viewCityPressure;
+
+    static final String keyDateToSecondActivity = "ToSecondActivity";
     private void viewCycleInfo(String message){
         Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
         Log.d(TAG, message);
@@ -27,24 +38,33 @@ public class MainActivity extends AppCompatActivity {
             instanceState = "Первая загрузка ";
         else
             instanceState = "повторная загрузка ";
-
         viewCycleInfo(instanceState + "onCreate");
 
-        counterTextView = findViewById(R.id.counterText);
+        initView(instanceState);
+        initButton(instanceState);
+
+    }
+
+    private void initView(String instanceState) {
+        viewCityName = findViewById(R.id.editText);
+        viewCityHum = findViewById(R.id.checkBoxHumidity);
+        viewCityOvercast = findViewById(R.id.checkBoxOvercast);
+        viewCityWind = findViewById(R.id.checkBoxWind);
+        viewCityPressure = findViewById(R.id.checkBoxPressure);
+    }
+    private void initButton(String instanceState) {
 
         findViewById(R.id.toSecondActivityBtn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+                intent.putExtra(keyDateToSecondActivity,new ViewParamsToSecondActivity(viewCityName.getText().toString(),
+                        viewCityHum.isChecked(),
+                        viewCityOvercast.isChecked(),
+                        viewCityWind.isChecked(),
+                        viewCityPressure.isChecked()
+                        ));
                 startActivity(intent);
-            }
-        });
-        findViewById(R.id.increaseCounterBtn).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                int counter = Integer.parseInt(counterTextView.getText().toString());
-                String text = String.valueOf(++counter);
-                counterTextView.setText(text);
             }
         });
     }
