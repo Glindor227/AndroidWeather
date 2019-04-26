@@ -1,3 +1,11 @@
 <resources>
-    <string name="app_name">AndroidWeather</string>
+    <string name="app_name">A1L1_Activities</string>
+    <string name="to_second_activity">To Second Activity</string>
+    <string name="increase_counter">Increase counter</string>
+    <string name="cityLabel">Город:  </string>
+    <string name="cityName">Москва</string>
+    <string name="tempLabel">Температура:  </string>
+    <string name="tempValue">21 C</string>
+    <string name="overcastLabel">Облачность:  </string>
+    <string name="weather">Погода</string>
 </resources>
