@@ -1,10 +1,13 @@
 package com.geekbrains.androidweather;
 
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.geekbrains.common.ViewParamsToSecondActivity;
@@ -22,6 +25,10 @@ public class SecondActivity extends AppCompatActivity {
         textViewName = findViewById(R.id.cityName);
         TextView textViewTemp = findViewById(R.id.tempValue);
         textViewTemp.setText(R.string.tempValue);
+
+        Drawable drawable = ContextCompat.getDrawable(this,R.drawable.overcast1);
+        ImageView imageView = findViewById(R.id.overcastValue);
+        imageView.setImageDrawable(drawable);
 
         initViewFromDataInstance();
 
