@@ -7,7 +7,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.geekbrains.common.ViewParamsToSecondActivity;
@@ -16,7 +15,6 @@ public class MainActivity extends AppCompatActivity {
     public static final String TAG = "GlindorLog";
 
     private EditText viewCityName;
-    private CheckBox viewCityTemp;
     private CheckBox viewCityHum;
     private CheckBox viewCityOvercast;
     private CheckBox viewCityWind;
@@ -40,19 +38,19 @@ public class MainActivity extends AppCompatActivity {
             instanceState = "повторная загрузка ";
         viewCycleInfo(instanceState + "onCreate");
 
-        initView(instanceState);
-        initButton(instanceState);
+        initView();
+        initButton();
 
     }
 
-    private void initView(String instanceState) {
+    private void initView() {
         viewCityName = findViewById(R.id.editText);
         viewCityHum = findViewById(R.id.checkBoxHumidity);
         viewCityOvercast = findViewById(R.id.checkBoxOvercast);
         viewCityWind = findViewById(R.id.checkBoxWind);
         viewCityPressure = findViewById(R.id.checkBoxPressure);
     }
-    private void initButton(String instanceState) {
+    private void initButton() {
 
         findViewById(R.id.toSecondActivityBtn).setOnClickListener(new View.OnClickListener() {
             @Override
