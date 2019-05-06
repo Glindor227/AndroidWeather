@@ -120,7 +120,6 @@
         <ImageView
             android:id="@+id/overcastValue"
             android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:background="@drawable/overcast1" />
+            android:layout_height="50dp"/>
     </LinearLayout>
 </LinearLayout>

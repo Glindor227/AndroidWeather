@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Weather</string>
+    <string name="cityLabel">City:  </string>
+    <string name="cityName">Moscow</string>
+
+    <string name="tempLabel">Temperature:  </string>
+    <string name="overcastLabel">Overcast:  </string>
+    <string name="humLabel">Humidity:  </string>
+    <string name="pressureLabel">Pressure:  </string>
+    <string name="windLabel">Wind speed:  </string>
+
+    <string name="checkBoxOvercast">Overcast</string>
+    <string name="checkBoxHumidity">Humidity</string>
+    <string name="checkBoxPressure">Pressure</string>
+    <string name="checkBoxWind">Wind speed</string>
+
+    <string name="tempValue">21 \u2103</string>
+    <string name="humValue">75%</string>
+    <string name="pressureValue">760mm</string>
+    <string name="windValue">5 &#8211; 7 m/s</string>
+
+    <string name="cityLabel2">City</string>
+    <string name="cityHelp">Enter the city name</string>
+    <string name="to_second_activity">To weather</string>
+</resources>

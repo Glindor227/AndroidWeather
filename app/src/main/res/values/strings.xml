@@ -1,7 +1,5 @@
 <resources>
     <string name="app_name">Погода</string>
-    <string name="to_second_activity">К погоде</string>
-    <string name="increase_counter">Increase counter</string>
     <string name="cityLabel">Город:  </string>
     <string name="cityName">Москва</string>
 
@@ -23,4 +21,5 @@
 
     <string name="cityLabel2">Город</string>
     <string name="cityHelp">Введите имя города</string>
+    <string name="to_second_activity">К погоде</string>
 </resources>
